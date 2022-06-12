@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jvalle/Coding/gruppe_v/googletest
+CMAKE_SOURCE_DIR = /home/jv/Coding/gruppe_v_comp/gruppe_v/googletest
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jvalle/Coding/gruppe_v/googletest/build
+CMAKE_BINARY_DIR = /home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jvalle/Coding/gruppe_v/googletest/build/CMakeFiles /home/jvalle/Coding/gruppe_v/googletest/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/build/CMakeFiles /home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jvalle/Coding/gruppe_v/googletest/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

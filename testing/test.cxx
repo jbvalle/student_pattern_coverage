@@ -88,6 +88,7 @@ namespace {
     protected:
         GtkWidget **image;
         MyWidget *widget_test{};
+        Classroom *classroom{};
         int NUMBER_OF_STUDENTS;
     };
 
@@ -101,6 +102,76 @@ namespace {
         create_view3(widget_test);
         for (int i = 0; i < NUMBER_OF_STUDENTS; ++i) {
             ASSERT_NE(widget_test->image[i],image[i]);
+        }
+    }
+    TEST_F(inputOutput, _25_Procent_Pattern) {
+
+        //===== 1. SETUP Variables ====================================
+        widget_test->user_choice = 25;
+        widget_test->col = 4, widget_test->row = 4;
+        NUMBER_OF_STUDENTS = widget_test->col * widget_test->row;
+
+        //===== 2. Execute Function to be tested ======================
+        classroom = generate_25p_coverage_pattern(classroom, widget_test);
+
+        //===== 3. Test Values if Correct =============================
+        int tmp ;
+
+        for(int z = widget_test->row ; z >= 0; z=z-2){
+            for(int s = 0; s < widget_test->col ; s=s+2){
+                tmp = z * widget_test->col + s;
+                if (tmp >= widget_test->row * widget_test->col)
+                    continue;
+                EXPECT_TRUE(classroom->students[tmp].hasSeat);
+            }
+        }
+
+    }
+    TEST_F(inputOutput, _50_Procent_Pattern) {
+
+        //===== 1. SETUP Variables ====================================
+        widget_test->user_choice = 50;
+        widget_test->col = 4, widget_test->row = 4;
+        NUMBER_OF_STUDENTS = widget_test->col * widget_test->row;
+
+        //===== 2. Execute Function to be tested ======================
+        classroom = generate_50p_coverage_pattern(classroom, widget_test);
+
+        //===== 3. Test Values if Correct =============================
+        bool first_element_row_state = true, temp_state;
+
+        
+        for(int i = 0; i < widget_test->row; i++){
+
+            first_element_row_state = !first_element_row_state;
+            
+            temp_state = first_element_row_state;
+
+            for(int j = 0; j < widget_test->col; j++){
+
+                EXPECT_EQ(classroom->students[i * widget_test->col + j].hasSeat, !temp_state);
+                temp_state = !temp_state;
+            }
+        }
+
+    }
+    
+    TEST_F(inputOutput, _100_Procent_Pattern) {
+
+        //===== 1. SETUP Variables ====================================
+        widget_test->col = 4, widget_test->row = 4;
+        NUMBER_OF_STUDENTS = widget_test->col * widget_test->row;
+
+        //===== 2. Execute Function to be tested ======================
+        classroom = generate_100p_coverage_pattern(classroom, widget_test);
+
+        //===== 3. Test Values if Correct =============================
+        for(int i = 0; i < widget_test->row; i++){
+
+            for(int j = 0; j < widget_test->col; j++){
+                
+                EXPECT_TRUE(classroom->students[i * widget_test->col + j].hasSeat);
+            }
         }
     }
 }

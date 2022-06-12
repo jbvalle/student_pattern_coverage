@@ -1,4 +1,4 @@
-/home/jvalle/Coding/gruppe_v/googletest/build/CMakeFiles/rebuild_cache.dir
-/home/jvalle/Coding/gruppe_v/googletest/build/CMakeFiles/edit_cache.dir
-/home/jvalle/Coding/gruppe_v/googletest/build/CMakeFiles/gtest_main.dir
-/home/jvalle/Coding/gruppe_v/googletest/build/CMakeFiles/gtest.dir
+/home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/build/CMakeFiles/rebuild_cache.dir
+/home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/build/CMakeFiles/edit_cache.dir
+/home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/build/CMakeFiles/gtest_main.dir
+/home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/build/CMakeFiles/gtest.dir

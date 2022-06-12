@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jvalle/Coding/gruppe_v/googletest
+CMAKE_SOURCE_DIR = /home/jv/Coding/gruppe_v_comp/gruppe_v/googletest
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jvalle/Coding/gruppe_v/googletest/build
+CMAKE_BINARY_DIR = /home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/gtest_main.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/gtest_main.dir/flags.make
 
 CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: CMakeFiles/gtest_main.dir/flags.make
 CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: ../src/gtest_main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jvalle/Coding/gruppe_v/googletest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/jvalle/Coding/gruppe_v/googletest/src/gtest_main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/src/gtest_main.cc
 
 CMakeFiles/gtest_main.dir/src/gtest_main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gtest_main.dir/src/gtest_main.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jvalle/Coding/gruppe_v/googletest/src/gtest_main.cc > CMakeFiles/gtest_main.dir/src/gtest_main.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/src/gtest_main.cc > CMakeFiles/gtest_main.dir/src/gtest_main.cc.i
 
 CMakeFiles/gtest_main.dir/src/gtest_main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gtest_main.dir/src/gtest_main.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jvalle/Coding/gruppe_v/googletest/src/gtest_main.cc -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/src/gtest_main.cc -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.s
 
 # Object files for target gtest_main
 gtest_main_OBJECTS = \
@@ -80,7 +80,7 @@ gtest_main_EXTERNAL_OBJECTS =
 lib/libgtest_main.a: CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
 lib/libgtest_main.a: CMakeFiles/gtest_main.dir/build.make
 lib/libgtest_main.a: CMakeFiles/gtest_main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jvalle/Coding/gruppe_v/googletest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library lib/libgtest_main.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library lib/libgtest_main.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/gtest_main.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest_main.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/gtest_main.dir/clean:
 .PHONY : CMakeFiles/gtest_main.dir/clean
 
 CMakeFiles/gtest_main.dir/depend:
-	cd /home/jvalle/Coding/gruppe_v/googletest/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jvalle/Coding/gruppe_v/googletest /home/jvalle/Coding/gruppe_v/googletest /home/jvalle/Coding/gruppe_v/googletest/build /home/jvalle/Coding/gruppe_v/googletest/build /home/jvalle/Coding/gruppe_v/googletest/build/CMakeFiles/gtest_main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jv/Coding/gruppe_v_comp/gruppe_v/googletest /home/jv/Coding/gruppe_v_comp/gruppe_v/googletest /home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/build /home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/build /home/jv/Coding/gruppe_v_comp/gruppe_v/googletest/build/CMakeFiles/gtest_main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/gtest_main.dir/depend
 

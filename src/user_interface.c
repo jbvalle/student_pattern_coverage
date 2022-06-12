@@ -7,6 +7,68 @@ static int reference_cnt_view2 = 0; //
 static int reference_cnt_view3 = 0; //
 void init_classroom(GtkWidget *button, gpointer data);
 
+
+Classroom* generate_25p_coverage_pattern(Classroom *classroom, MyWidget *myWidget){
+
+    const int NUMBER_OF_STUDENTS = myWidget->row * myWidget->col;
+
+    for (int i = 0; i < NUMBER_OF_STUDENTS; ++i) {
+        classroom->students[i].hasSeat = false;
+    }
+    int tmp ;
+
+    for(int z = myWidget->row ; z >= 0; z=z-2){
+        for(int s = 0; s < myWidget->col ; s=s+2){
+            tmp = z * myWidget->col + s;
+            if (tmp >= myWidget->row * myWidget->col)
+                continue;
+            classroom->students[tmp].hasSeat = true;
+           // g_print("%d actual value\n",z * myWidget->col + s);
+        }
+    }
+
+    return classroom;
+    
+}
+
+
+Classroom* generate_50p_coverage_pattern(Classroom *classroom, MyWidget *myWidget){
+
+    //Users choice 50%
+    bool first_element_row_state = true, temp_state;
+
+    for(int i = 0; i < myWidget->row; i++){
+
+        first_element_row_state = !first_element_row_state;
+        
+        temp_state = first_element_row_state;
+
+        for(int j = 0; j < myWidget->col; j++){
+            
+            classroom->students[i * myWidget->col + j].hasSeat = !temp_state;
+
+            temp_state = !temp_state;
+        }
+    }
+
+    return classroom;
+}
+
+
+Classroom* generate_100p_coverage_pattern(Classroom *classroom, MyWidget *myWidget){
+    
+    //Users choice 100%
+    for(int i = 0; i < myWidget->row; i++){
+
+        for(int j = 0; j < myWidget->col; j++){
+            
+            classroom->students[i * myWidget->col + j].hasSeat = true;
+        }
+    }
+
+    return classroom;
+}
+
 GtkWidget *create_view1(MyWidget *view) {
     GtkWidget *window = gtk_scrolled_window_new(NULL, NULL);
     GtkWidget *vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
@@ -623,53 +685,13 @@ void init_classroom(GtkWidget *button, gpointer data) {
     }
 //    g_print("%d actual value\n",z * myWidget->col + s);
 
-    if (myWidget->user_choice == 25) {
-        for (int i = 0; i < NUMBER_OF_STUDENTS; ++i) {
-            classroom->students[i].hasSeat = false;
-        }
-        int tmp ;
-        for(int z = myWidget->row ; z >= 0; z=z-2){
-            for(int s = 0; s < myWidget->col ; s=s+2){
-                tmp = z * myWidget->col + s;
-                if (tmp >= myWidget->row * myWidget->col)
-                    continue;
-                classroom->students[tmp].hasSeat = true;
-               // g_print("%d actual value\n",z * myWidget->col + s);
-            }
-        }
-    }
+ //Generate Coverage Pattern depending on User's choice
+    if(myWidget->user_choice == 25)(void)generate_25p_coverage_pattern(classroom, myWidget);
 
-    //Users choice 50%
-    bool first_element_row_state = true, temp_state;
+    if(myWidget->user_choice == 50)(void)generate_50p_coverage_pattern(classroom, myWidget);
 
-    if (myWidget->user_choice == 50) {
+    if(myWidget->user_choice == 100)(void)generate_100p_coverage_pattern(classroom, myWidget);
 
-        for(int i = 0; i < myWidget->row; i++){
-
-            first_element_row_state = !first_element_row_state;
-            
-            temp_state = first_element_row_state;
-
-            for(int j = 0; j < myWidget->col; j++){
-                
-                classroom->students[i * myWidget->col + j].hasSeat = !temp_state;
-
-                temp_state = !temp_state;
-            }
-        }
-    }
-
-    //Users choice 100%
-    if (myWidget->user_choice == 100) {
-
-        for(int i = 0; i < myWidget->row; i++){
-
-            for(int j = 0; j < myWidget->col; j++){
-                
-                classroom->students[i * myWidget->col + j].hasSeat = true;
-            }
-        }
-    }
 
 }
 

@@ -73,4 +73,8 @@ bool validate_user_input(StudentEntry *student_entry_input, Classroom *current_c
 
 void get_direct_neighbour();
 
+
+Classroom* generate_25p_coverage_pattern(Classroom *classroom, MyWidget *myWidget);
+Classroom* generate_50p_coverage_pattern(Classroom *classroom, MyWidget *myWidget);
+Classroom* generate_100p_coverage_pattern(Classroom *classroom, MyWidget *myWidget);
 #endif //GRUPPE_V_PROJECT_FUNCTION_H

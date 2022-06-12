@@ -8,16 +8,17 @@ build:
     - bash build_gtest.sh && mkdir -p build && cd build && cmake .. && make
   artifacts:
     paths:
-      - ./
+      - ./*
+      - ../*
       - build/*
 
 test:
   stage: test
   script:
+    - cd build && ./testRunner
+    #- cd testing && make && make run &&./test --gtest_output="xml:./"
     #- ./
     #- ./testRunner --gtest_output="xml:./"
-    - dir && pwd && cd build && dir
-    - cd build && ./testRunner
   artifacts:
     when: always
     paths: 
@@ -29,4 +30,4 @@ test:
 clean:
   stage: clean
   script:
-    - make clean
+    - rm -rf build
