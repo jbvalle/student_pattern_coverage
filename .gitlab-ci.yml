@@ -17,6 +17,8 @@ test:
   script:
     - cd build && ./testRunner
     #- cd testing && make && make run &&./test --gtest_output="xml:./"
+    #- ./
+    #- ./testRunner --gtest_output="xml:./"
   artifacts:
     when: always
     paths: 
